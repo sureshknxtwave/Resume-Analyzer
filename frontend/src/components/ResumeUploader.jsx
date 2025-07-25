@@ -30,7 +30,7 @@ const ResumeUploader = ({ onUploadSuccess }) => {
     formData.append('resume', file);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/resumes/upload', formData, {
+      const res = await axios.post('https://resume-analyzer-posk.onrender.com/api/resumes/upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       onUploadSuccess(res.data);

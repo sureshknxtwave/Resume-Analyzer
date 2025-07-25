@@ -18,7 +18,7 @@ const App = () => {
       // Added a try-catch for error handling during API call
       const fetchResumes = async () => {
         try {
-          const res = await axios.get('http://localhost:5000/api/resumes');
+          const res = await axios.get('https://resume-analyzer-posk.onrender.com/api/resumes');
           setResumes(res.data);
         } catch (error) {
           console.error('Failed to fetch historical resumes:', error);
@@ -37,7 +37,7 @@ const App = () => {
 
   const handleShowDetails = async (id) => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/resumes/${id}`);
+      const res = await axios.get(`https://resume-analyzer-posk.onrender.com/api/resumes/${id}`);
       setSelectedResume(res.data);
       setShowDetails(true);
     } catch (error) {
