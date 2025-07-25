@@ -9,15 +9,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const path = require('path');
+
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'dist')));
 
-// The "catchall" handler: for any request that doesn't match an API route, send back index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-});
 
 app.use('/api/resumes', resumeRoutes);
 
